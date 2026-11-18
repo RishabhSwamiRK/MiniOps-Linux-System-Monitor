@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniOps | Linux System Monitor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>MiniOps</h1>
+            <p>Linux System Monitoring Dashboard</p>
+        </div>
+        <span id="status">Connecting...</span>
+    </header>
+
+    <main>
+        <section class="grid">
+
+            <article class="card">
+                <h2>CPU Usage</h2>
+                <p class="value"><span id="cpu">--</span>%</p>
+                <progress id="cpuBar" max="100" value="0"></progress>
+            </article>
+
+            <article class="card">
+                <h2>RAM Usage</h2>
+                <p class="value"><span id="ram">--</span>%</p>
+                <p id="ramDetails">Loading memory...</p>
+                <progress id="ramBar" max="100" value="0"></progress>
+            </article>
+
+            <article class="card">
+                <h2>Disk Usage</h2>
+                <p class="value"><span id="disk">--</span>%</p>
+                <p id="diskDetails">Loading disk...</p>
+                <progress id="diskBar" max="100" value="0"></progress>
+            </article>
+
+          <article class="card">
+    <h2>Network Traffic</h2>
+
+    <p>Sent: <strong id="sent">--</strong></p>
+    <p>Received: <strong id="received">--</strong></p>
+
+    <hr>
+
+    <h3>Live Network Speed</h3>
+    <p>Upload: <strong id="uploadSpeed">--</strong></p>
+    <p>Download: <strong id="downloadSpeed">--</strong></p>
+</article>
+        </section>
+        
+
+<section class="card process-card">
+    <h2>Live Performance Monitoring</h2>
+
+    <div class="grid">
+        <article class="card">
+            <h2>CPU Performance</h2>
+            <canvas id="cpuChart" height="120"></canvas>
+        </article>
+
+        <article class="card">
+            <h2>RAM Performance</h2>
+            <canvas id="ramChart" height="120"></canvas>
+        </article>
+    </div>
+</section>
+
+
+        <section class="card process-card">
+            <h2>Running Processes</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>PID</th>
+                            <th>Process Name</th>
+                            <th>Memory Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="processTable">
+                        <tr><td colspan="3">Loading processes...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            Last updated: <span id="updated">--</span>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
+```
